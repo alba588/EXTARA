@@ -126,9 +126,9 @@ def publik(token,cookie):
 	if idt in[""]:
 		menu()
 	print(f"{J}├───────────────────────────────────────────────────────")
-	print(f"""{J}├───[{H}+{J}]{U} Crack Semua Id New Dan Old
-{J}├───[{H}+{J}]{U} Crack Id New 10007-10008
-{J}├───[{H}+{J}]{U} Crack Id Old 10 Digit Kebawah""")
+	print(f"""{J}├───[{H}1{J}]{U} Crack Semua Id New Dan Old
+{J}├───[{H}2{J}]{U} Crack Id New 10007-10008
+{J}├───[{H}3{J}]{U} Crack Id Old 10 Digit Kebawah""")
 	print(f"{J}├──╭[{H}MENU{J}]──────────────────────────────────────────────")
 	ask = input(f"{J}│  ╰──{U}➣{H} ")
 	if ask in["1"]:
@@ -172,8 +172,8 @@ def atursandi():
 
 def otomatis():
 	print(f"{J}├───────────────────────────────────────────────────────")
-	print(f"{J}├───[{H}1{J}]{U} metode API")
-	print(f"{J}├───[{H}2{J}]{U} metode mobile")
+	print(f"{J}├───[{H}1{J}]{U} Metode API")
+	print(f"{J}├───[{H}2{J}]{U} Metode Mobile")
 	print(f"{J}├──╭[{H}METODE{J}]────────────────────────────────────────────")
 	ask=input(f"{J}│  ╰──{U}➣{H} ")
 	if ask=="":
@@ -217,8 +217,8 @@ def manual():
 	elif len(pwek)<=5:
 		exit("%s├───[!] Masukan Sandi Minimal 6 Angka!"%(M))
 	print(f"{J}├───────────────────────────────────────────────────────")
-	print(f"{J}├───[{H}1{J}]{U} metode API")
-	print(f"{J}├───[{H}2{J}]{U} metode mobile")
+	print(f"{J}├───[{H}1{J}]{U} Metode API")
+	print(f"{J}├───[{H}2{J}]{U} Metode Mobile")
 	print(f"{J}├──╭[{H}METODE{J}]────────────────────────────────────────────")
 	ask=input(f"{J}│  ╰──{U}➣{H} ")
 	if ask=="":
@@ -253,8 +253,8 @@ def gabungkan():
 	elif len(pwek)<=5:
 		exit("%s├───[!] Masukan Sandi Minimal 6 Angka!"%(M))
 	print(f"{J}├───────────────────────────────────────────────────────")
-	print(f"{J}├───[{H}1{J}]{U} metode API")
-	print(f"{J}├───[{H}2{J}]{U} metode mobile")
+	print(f"{J}├───[{H}1{J}]{U} Metode API")
+	print(f"{J}├───[{H}2{J}]{U} Metode Mobile")
 	print(f"{J}├──╭[{H}METODE{J}]────────────────────────────────────────────")
 	ask=input(f"{J}│  ╰──{U}➣{H} ")
 	if ask=="":
@@ -292,7 +292,7 @@ def gabungkan():
 def api(user, pwx):
 	global ok, cp, loop, token
 	prox = open("proxy.txt","r").read().splitlines()
-	sys.stdout.write(f"\r{N}└───[{B}ChangFB{N}][{B}{loop}/{len(id)}{N}]-[{H}OK : {len(ok)}{N}]-[{M}CP : {len(cp)}{N}] "); sys.stdout.flush()
+	sys.stdout.write(f"\r{J}└───[{K}ChangFB{J}][{B}{loop}/{len(id)}{J}]-[{H}OK : {len(ok)}{J}]-[{M}CP : {len(cp)}{J}] "); sys.stdout.flush()
 	try:
 		for pw in pwx:
 			pw = pw.lower()
@@ -381,9 +381,21 @@ def api(user, pwx):
 def crack(user, pwx):
 	global ok, cp, loop, token
 	prox = open("proxy.txt","r").read().splitlines()
-	ua1 = random.choice(ugent1)
-	ua2 = random.choice(ugent2)
-	sys.stdout.write(f"\r{N}└───[{B}ChangFB{N}][{B}{loop}/{len(id)}{N}]-[{H}OK : {len(ok)}{N}]-[{M}CP : {len(cp)}{N}] "); sys.stdout.flush()
+	ua = random.choice(['Mozilla/5.0 (iPhone; CPU iPhone OS 15_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.5 Mobile/15E148 Safari/604.1','Mozilla/5.0 (iPhone; CPU iPhone OS 15_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148',
+'Mozilla/5.0 (iPhone; CPU iPhone OS 14_8_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148','Mozilla/5.0 (iPhone; CPU iPhone OS 15_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/103.0.5060.63 Mobile/15E148 Safari/604.1',
+'Mozilla/5.0 (iPhone; CPU iPhone OS 15_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.6 Mobile/15E148 Safari/604.1','Mozilla/5.0 (iPhone; CPU iPhone OS 15_4_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/15.4 Mobile/15E148 Safari/604.1','Mozilla/5.0 (iPhone; CPU iPhone OS 14_8_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1.2 Mobile/15E148 Safari/604.1',
+'Autoplius.lt/6.6.0 Mozilla/5.0 (iPhone; CPU iPhone OS 15_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 EmbeddedBrowser DeviceUID:','Mozilla/5.0 (iPhone; CPU iPhone OS 15_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/103.0.5060.63 Mobile/15E148 Safari/604.1',
+'Mozilla/5.0 (iPad; CPU OS 15_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/103.0.5060.63 Mobile/15E148 Safari/604.1','Mozilla/5.0 (iPhone; CPU iPhone OS 15_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) GSA/221.0.461030601 Mobile/15E148 Safari/604.1',
+'Mozilla/5.0 (iPhone; CPU iPhone OS 15_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 musical_ly_25.3.0 JsSdk/2.0 NetType/WIFI Channel/App Store ByteLocale/en Region/US RevealType/Dialog isDarkMode/0 WKWebView/1 BytedanceWebview/d8a21c6 FalconTag/','Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.114 Safari/537.36 Edg/103.0.1264.62'
+])
+	ua2 = random.choice(['Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.114 Safari/537.36 RuxitSynthetic/1.0','Mozilla/5.0 (iPhone; CPU iPhone OS 10_3 like Mac OS X) AppleWebKit/602.1.50 (KHTML, like Gecko) CriOS/56.0.2924.75 Mobile/14E5239e Safari/602.1 RuxitSynthetic/1.0',
+'Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 10.0; Win64; x64; Trident/7.0; .NET4.0C; .NET4.0E; Tablet PC 2.0; Zoom 3.6.0)','Mozilla/5.0 (iPad; CPU OS 12_5_5 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/12.1.2 Mobile/15E148 Safari/604.1',
+'Mozilla/5.0 (Linux; Android 11; moto g pure) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Mobile Safari/537.36','Mozilla/5.0 (Linux; Android 11; moto g stylus 5G) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Mobile Safari/537.36','Mozilla/5.0 (Linux; Android 11; moto g stylus) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Mobile Safari/537.36',
+'Mozilla/5.0 (Linux; Android 10; JNY-LX1; HMSCore 6.6.0.312) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.105 HuaweiBrowser/12.1.0.303 Mobile Safari/537.36','Mozilla/5.0 (Linux; Android 10; ART-L29; HMSCore 6.6.0.311) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.105 HuaweiBrowser/12.1.0.303 Mobile Safari/537.36',
+'Mozilla/5.0 (Linux; Android 10; ELS-NX9; HMSCore 6.6.0.312) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.105 HuaweiBrowser/12.1.0.303 Mobile Safari/537.36','Mozilla/5.0 (Linux; Android 8.1.0; jhs561 Build/GIADA.eng.zc.20200922.153858; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/81.0.4044.138 Safari/537.36',
+'Mozilla/5.0 (Linux; Android 12; SM-G991U) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Mobile Safari/537.36','Mozilla/5.0 (Linux; Android 7.1.2; 17MB150WB Build/NZH54D; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/72.0.3626.121 Safari/537.36'
+])
+	sys.stdout.write(f"\r{J}└───[{B}ChangFB{N}][{B}{loop}/{len(id)}{N}]-[{H}OK : {len(ok)}{N}]-[{M}CP : {len(cp)}{N}] "); sys.stdout.flush()
 	try:
 		for pw in pwx:
 			dat = {}
